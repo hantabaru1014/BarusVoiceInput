@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>設定</title>
+        <script src="settings_js.js"></script>
+    </head>
+    <body onload="onLoad()" onunload="onUnload()">
+        <h1 style="width: 100%"><label>設定</label> <input type="button" value="保存" onclick="sendData()" style="float: right"></h1>
+        <hr>
+        <form name="main">
+        <div><label>使用する言語： <input type="text" name="lang" size="5"> ※日本語:ja-JP, アメリカ英語:en-US, イギリス英語:en-GB, 中国語:zh-CN, 韓国語:ko-KR</label></div>
+        <div><label>一時停止のホットキー： <select name="modkey"><option value="1">Alt</option><option value="2">Control</option><option value="4">Shift</option></select> + Space ※変更後は再起動が必要です</label></div>
+        <div>
+            <label>置換する文字：</label><br>
+            <select name="replace_sel" size="10" style="width: 70%;">
+
+            </select>
+            <input type="button" value="削除" onclick="delSelectedOption()">
+            <br><br>
+            <label>追加： <input type="text" name="replace_before" size="10"> => <input type="text" name="replace_after" size="10"> <input type="button" value="追加" id="replace_add" onclick="addReplaceOption();"></label>
+        </div>
+        <br><hr>
+        <input type="button" value="保存" onclick="sendData()">
+        </form>
+    </body>
+</html>
